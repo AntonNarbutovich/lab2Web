@@ -5,14 +5,12 @@ import com.company.myapp.model.entity.GlobalEmployee;
 import com.company.myapp.utils.EmployeeUtil;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.transaction.Transactional;
 import java.util.List;
 
 @Repository
@@ -27,14 +25,19 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     public List<Employee> getAll() {
         Session session = sessionFactory.openSession();
         Query query = session.createQuery("select employee from Employee employee", Employee.class);
-        return query.list();    }
+        List<Employee> emps = query.list();
+        session.close();
+        return emps;
+    }
 
     @Override
     public List<GlobalEmployee> getUsersToAdd() {
         Session session = sessionFactory.openSession();
         Query query = session.createQuery("select employee from GlobalEmployee employee " +
                 "where employee.id NOT IN (select emp.id from Employee emp)");
-        return query.list();
+        List<GlobalEmployee> emps = query.list();
+        session.close();
+        return emps;
     }
 
     @Override
@@ -42,28 +45,34 @@ public class EmployeeDAOImpl implements EmployeeDAO {
         Session session = sessionFactory.openSession();
         Query query = session.createQuery("select employee from Employee employee " +
                 "where employee.id NOT IN (select emp.id from GlobalEmployee emp)");
-        return query.list();
+        List<GlobalEmployee> emps = query.list();
+        session.close();
+        return emps;
     }
 
     @Override
     public Employee getById(Long id) {
         Session session = sessionFactory.openSession();
-        return session.get(Employee.class, id);
+        Employee emp = session.get(Employee.class, id);
+        session.close();
+        return emp;
     }
 
     @Override
     public GlobalEmployee getGlobalById(Long id) {
         Session session = sessionFactory.openSession();
-        return session.get(GlobalEmployee.class, id);
+        GlobalEmployee emp = session.get(GlobalEmployee.class, id);
+        session.close();
+        return emp;
     }
 
     @Override
-    @Transactional
     public void add(Long id) {
         Session session = sessionFactory.openSession();
         session.beginTransaction();
         session.save(EmployeeUtil.convert(getGlobalById(id)));
         session.getTransaction().commit();
+        session.close();
     }
 
     @Override
@@ -72,5 +81,6 @@ public class EmployeeDAOImpl implements EmployeeDAO {
         session.beginTransaction();
         session.remove(getById(id));
         session.getTransaction().commit();
+        session.close();
     }
 }

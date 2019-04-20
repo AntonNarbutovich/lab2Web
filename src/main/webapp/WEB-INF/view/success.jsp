@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<div>
+<div class="success">
     <p>User <b>${name} ${surname}</b> was ${action}</p>
 </div>
 

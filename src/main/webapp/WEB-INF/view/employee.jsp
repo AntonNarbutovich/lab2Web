@@ -35,7 +35,7 @@
     </a>
     <a href="#btn">
         <div id="current-user" class="header-region">
-            <img src="../images/emptyAvatar.png" alt="avatar"/>
+            <img src="" alt="avatar" onerror=this.src="../images/emptyAvatar.png">
         </div>
     </a>
 </header>
@@ -60,7 +60,7 @@
                 </tr>
             </c:forEach>
         </table>
-            <input type="submit" value="add">
+            <input id="add" type="submit" value="add">
         </form>
     </div>
 </div>
@@ -85,7 +85,7 @@
                     </tr>
                 </c:forEach>
             </table>
-            <input type="submit" value="delete">
+            <input id="delete" type="submit" value="delete">
         </form>
     </div>
 </div>

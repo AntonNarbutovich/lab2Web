@@ -139,7 +139,8 @@ table.employee-list td{
     width: 130px;
     height: 25px;
     border: none;
-    color: black;
+    border-bottom: solid #606060 1px;
+    color: #606060;
     text-align: center;
     cursor: pointer;
     font-size: 1.3em;
@@ -148,6 +149,7 @@ table.employee-list td{
 
 .return:hover{
     color: #06D85F;
+    border-color: #06D85F;
 }
 
 .modalWindow {
@@ -192,4 +194,42 @@ a.close {
 
 a.close:hover {
     color: #06D85F;
+}
+
+.success{
+    position: relative;
+    margin-top: 2%;
+    margin-left: 2%;
+    color: black;
+    font-size: 1.7em;
+}
+
+input#add{
+     position: relative;
+     margin-top: 2%;
+     color: #606060;
+     border: none;
+     border-bottom: solid #06D85F 1px;
+     background: none;
+     font-size: 1em;
+ }
+
+input#add:hover{
+    color: #06D85F;
+
+}
+
+input#delete{
+    position: relative;
+    margin-top: 2%;
+    color: #606060;
+    border: none;
+    border-bottom: solid #d8534c 1px;
+    background: none;
+    font-size: 1em;
+}
+
+input#delete:hover{
+    color: #d8534c;
+
 }

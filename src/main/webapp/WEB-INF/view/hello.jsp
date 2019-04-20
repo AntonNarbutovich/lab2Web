@@ -34,7 +34,7 @@
     </a>
     <a href="#btn">
         <div id="current-user" class="header-region">
-            <img src="../images/emptyAvatar.png" alt="avatar"/>
+            <img src="" alt="avatar" onerror=this.src="../images/emptyAvatar.png">
         </div>
     </a>
 </header>
