@@ -33,9 +33,12 @@
             <p>Employees</p>
         </div>
     </a>
-    <a href="#btn">
+    <a href="${pageContext.request.contextPath}/info">
         <div id="current-user" class="header-region">
-            <img src="" alt="avatar" onerror=this.src="../images/emptyAvatar.png">
+            <% String image;   try{image = javax.xml.bind.DatatypeConverter.printBase64Binary((byte[]) request.getAttribute("image"));}
+            catch (Exception e){ image=null; };
+            %>
+            <img src="data:image/jpg;base64, <%=image%>" alt="avatar" onerror=this.src="../images/emptyAvatar.png">
         </div>
     </a>
 </header>
@@ -92,6 +95,14 @@
 
 <div class="user-table">
 <table class="employee-list">
+    <caption><b>Employees</b></caption>
+    <thead>
+    <tr>
+        <th id="name">name</th>
+        <th id="surname">surname</th>
+        <th id="role">role</th>
+    </tr>
+    </thead>
     <c:forEach items="${employees}" var="employee">
         <tr>
             <td>${employee.name}</td>

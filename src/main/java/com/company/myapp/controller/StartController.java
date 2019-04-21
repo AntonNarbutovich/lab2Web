@@ -27,7 +27,8 @@ public class StartController {
     }
 
     @GetMapping("/info")
-    public String info(){
+    public String info(Model model){
+        userService.getEmp(model, SecurityContextHolder.getContext().getAuthentication().getName());
         return "empInfo";
     }
 }

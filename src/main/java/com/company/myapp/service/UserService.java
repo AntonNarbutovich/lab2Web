@@ -8,4 +8,6 @@ public interface UserService {
     User getUser(String login);
 
     void getUserImage(Model model, String login);
+
+    void getEmp(Model model, String login);
 }

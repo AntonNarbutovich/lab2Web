@@ -44,6 +44,14 @@ a{
     height: inherit;
 }
 
+a:visited{
+    text-decoration: none;
+}
+
+a:link{
+    text-decoration: none;
+}
+
 #header-image{
     float: left;
     width: 10%;
@@ -71,12 +79,28 @@ a{
 table.employee-list{
     border-collapse: collapse;
     color: #000;
-    border: 1px solid #000;
+    border: 2px solid #333333;
 }
 
 table.employee-list td{
+    padding: 3px;
     color: #000;
-    border: 1px solid #000;
+    border: 2px solid #333333;
+    width: 150px;
+}
+
+table.employee-list caption{
+    font-size: 1.2em;
+    border: 2px solid #333333;
+    background-color: #333333;
+    color: white;
+}
+
+table.employee-list thead{
+    font-size: 1.2em;
+    border: 2px solid #333333;
+    background-color: lightgray;
+    color: white;
 }
 
 .user-table{
@@ -148,8 +172,8 @@ table.employee-list td{
 }
 
 .return:hover{
-    color: #06D85F;
-    border-color: #06D85F;
+    color: lightskyblue;
+    border-color: lightskyblue;
 }
 
 .modalWindow {
@@ -181,8 +205,8 @@ table.employee-list td{
 
 a.close {
     position: absolute;
-    top: 2px;
-    right: 20px;
+    top: 0px;
+    right: 15px;
     max-width: 5px;
     max-height: 5px;
     transition: all 200ms;
@@ -193,7 +217,7 @@ a.close {
 }
 
 a.close:hover {
-    color: #06D85F;
+    color: lightskyblue;
 }
 
 .success{
@@ -251,7 +275,7 @@ input#delete:hover{
     border: 2px inset lightgray;
     border-radius: 20px/50px;
     transition: all 200ms;
-    width: 200px;
+    width: 120px;
     height: 30px;
     text-align: center;
     outline: none;
@@ -261,6 +285,7 @@ input#delete:hover{
 
 .form-control:hover, .form-control:focus{
     border-color: lightskyblue;
+    width: 180px;
 }
 
 
@@ -285,4 +310,51 @@ input#delete:hover{
 .login:hover{
     color: lightskyblue;
     border-color: lightskyblue;
+}
+
+.logout{
+    position: relative;
+    float: left;
+    margin-left: -25%;
+    margin-top: 20%;
+    padding-top: 5px;
+    border: 2px solid lightgray;
+    border-radius: 10px;
+    background-color: white;
+    width: 120px;
+    height: 30px;
+    color: #606060;
+    outline: none;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.logout:hover{
+    color: lightskyblue;
+    border-color: lightskyblue;
+}
+
+.user-image{
+    position: relative;
+    float: left;
+    margin-left: 5%;
+    margin-top: 5%;
+    height: 25%;
+    width: 25%;
+}
+
+.user-image img{
+    max-height: 100%;
+    width: auto;
+    max-width: 100%;
+}
+
+.user-info{
+    position: relative;
+    float: left;
+    border: 2px inset lightgray;
+    width: 30%;
+    height: 60%;
+    margin-top: 5%;
+    margin-left: 1%;
 }
