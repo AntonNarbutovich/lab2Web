@@ -4,6 +4,7 @@ import java.util.Properties;
 
 import com.company.myapp.model.entity.Employee;
 import com.company.myapp.model.entity.GlobalEmployee;
+import com.company.myapp.model.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -52,7 +53,7 @@ public class HibernateConfig {
         props.put(C3P0_MAX_STATEMENTS, env.getProperty("hibernate.c3p0.max_statements"));
 
         factoryBean.setHibernateProperties(props);
-        factoryBean.setAnnotatedClasses(Employee.class, GlobalEmployee.class);
+        factoryBean.setAnnotatedClasses(Employee.class, GlobalEmployee.class, User.class);
 
         return factoryBean;
     }

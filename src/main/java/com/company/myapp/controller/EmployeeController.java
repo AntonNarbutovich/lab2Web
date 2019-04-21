@@ -1,7 +1,10 @@
 package com.company.myapp.controller;
 
+import com.company.myapp.model.entity.Employee;
 import com.company.myapp.service.EmployeeService;
+import com.company.myapp.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -13,11 +16,15 @@ public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
 
+    @Autowired
+    private UserService userService;
+
     @GetMapping
     public String getEmployees(Model model){
         employeeService.getAll(model);
         employeeService.getUsersToAdd(model);
         employeeService.getUsersToDelete(model);
+        userService.getUserImage(model, SecurityContextHolder.getContext().getAuthentication().getName());
         return "employee";
     }
 

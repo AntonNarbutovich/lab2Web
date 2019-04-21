@@ -231,5 +231,58 @@ input#delete{
 
 input#delete:hover{
     color: #d8534c;
+}
 
+.form-signing-heading{
+    float: bottom;
+    margin-top: 10%;
+    margin-bottom: 70px;
+    text-align: center;
+    font-size: 2em;
+    font-family: "fantasy", sans-serif;
+    color: #606060;
+}
+
+.form-control{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    border: 2px inset lightgray;
+    border-radius: 20px/50px;
+    transition: all 200ms;
+    width: 200px;
+    height: 30px;
+    text-align: center;
+    outline: none;
+    color: #606060;
+    background-color: white;
+}
+
+.form-control:hover, .form-control:focus{
+    border-color: lightskyblue;
+}
+
+
+.form-control:hover::placeholder, .form-control:focus::placeholder{
+    color: lightskyblue;
+}
+
+.login{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    border: 2px solid lightgray;
+    border-radius: 10px;
+    background-color: white;
+    width: 100px;
+    height: 40px;
+    color: #606060;
+    outline: none;
+}
+
+.login:hover{
+    color: lightskyblue;
+    border-color: lightskyblue;
 }
