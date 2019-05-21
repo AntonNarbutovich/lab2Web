@@ -56,7 +56,9 @@
         </div>
     </a>
     <div class="user-info">
-
+        <b><%=emp.getName()%> <%=emp.getSurname()%> </b>
+        <br>
+        <p><%=emp.getRole()%></p>
     </div>
 </div>
 
