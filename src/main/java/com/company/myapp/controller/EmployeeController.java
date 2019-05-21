@@ -29,14 +29,26 @@ public class EmployeeController {
     }
 
     @PostMapping(value = "/add")
-    public String addEmployee(Model model, @RequestParam("id") Long id){
-        employeeService.addEmployee(model, id);
+    public String addEmployee(Model model, @RequestParam(value = "id", required=false) Long id){
+        try {
+            if(id == null) throw new Exception();
+            employeeService.addEmployee(model, id);
+        } catch (Exception e){
+            model.addAttribute("error", "User was not selected");
+            return "error";
+        }
         return "success";
     }
 
     @PostMapping(value = "/delete")
-    public String deleteEmployee(Model model, @RequestParam("id") Long id){
-        employeeService.deleteEmployee(model, id);
+    public String deleteEmployee(Model model, @RequestParam(value = "id", required=false) Long id){
+        try {
+            if(id == null) throw new Exception();
+            employeeService.deleteEmployee(model, id);
+        } catch (Exception e){
+            model.addAttribute("error", "User was not selected");
+            return "error";
+        }
         return "success";
     }
 //    @GetMapping(value = "/add")
