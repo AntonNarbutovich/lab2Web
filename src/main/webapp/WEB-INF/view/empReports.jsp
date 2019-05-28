@@ -1,5 +1,4 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <style><%@include file="../style/style.css"%></style>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 
@@ -18,21 +17,21 @@
         </div>
     </a>
     <a href="${contextPath}/reports/#btn">
-    <div id="btn" class="header-region">
-        <p>Reports</p>
-    </div>
+        <div id="btn" class="header-region">
+            <p>Reports</p>
+        </div>
     </a>
 
     <a href="#btn2">
-    <div id="btn2" class="header-region">
-        <p>Salary</p>
-    </div >
+        <div id="btn2" class="header-region">
+            <p>Salary</p>
+        </div >
     </a>
 
     <a href="${contextPath}/emp#btn3">
-    <div id="btn3" class="header-region">
-        <p>Employees</p>
-    </div>
+        <div id="btn3" class="header-region">
+            <p>Employees</p>
+        </div>
     </a>
     <a href="${pageContext.request.contextPath}/info">
         <div id="current-user" class="header-region">
@@ -44,6 +43,31 @@
     </a>
 </header>
 
+<c:forEach items="${reports}" var="card">
+
+<div class="user-table">
+    <table class="employee-list">
+        <caption><b>Report for ${card.mounth} with ${card.salary_type} payment<br>${name} ${surname}</b></caption>
+        <thead>
+        <tr>
+            <th id="Payment type">Payment type</th>
+            <th id="Sum">Sum</th>
+            <th id="Working hours">working hours</th>
+        </tr>
+        </thead>
+            <tr>
+                <td>Standart</td>
+                <td>${card.fixed_salary}</td>
+                <td>${card.work_time}</td>
+            </tr>
+        <tr>
+            <td>Extra hours</td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+    </table>
+</div>
+        </c:forEach>
 
 
 </body>

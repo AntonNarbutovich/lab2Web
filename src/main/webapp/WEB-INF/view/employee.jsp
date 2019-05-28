@@ -10,13 +10,13 @@
 </head>
 <body>
 <header>
-    <a href="#btn">
+    <a href="${contextPath}">
         <div id="header-image">
             <%--<img src="../images/header.png" alt="wtf">--%>
             <p>lab2</p>
         </div>
     </a>
-    <a href="#btn">
+    <a href="${contextPath}/reports/#btn">
         <div id="btn" class="header-region">
             <p>Reports</p>
         </div>

@@ -14,4 +14,5 @@ public interface EmployeeService {
 
     void deleteEmployee(Model model, Long id);
 
+    void getUser(Model model, Long id);
 }
