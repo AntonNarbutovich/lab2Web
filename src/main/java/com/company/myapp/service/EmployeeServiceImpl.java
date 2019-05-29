@@ -51,5 +51,11 @@ public class EmployeeServiceImpl implements EmployeeService{
         employeeDAO.delete(id);
     }
 
+    @Override
+    public void getUser(Model model, Long id) {
+        employeeDAO.getById(id);
+        model.addAttribute("name", employeeDAO.getById(id).getName());
+        model.addAttribute("surname", employeeDAO.getById(id).getSurname());
+    }
 
 }

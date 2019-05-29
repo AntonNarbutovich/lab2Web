@@ -16,7 +16,7 @@ public class StartController {
     private UserService userService;
 
     @GetMapping
-    public String hello(Model model){
+    public String start(Model model){
         userService.getUserImage(model, SecurityContextHolder.getContext().getAuthentication().getName());
         return "hello";
 }
