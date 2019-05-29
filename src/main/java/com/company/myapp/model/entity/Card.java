@@ -8,7 +8,20 @@ import java.util.List;
 
 @Entity
 @Table(name = "card")
-public class Card extends BaseEntity {
+public class Card {
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     @Column(name = "mounth")
     private String mounth;
 

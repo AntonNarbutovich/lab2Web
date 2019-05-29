@@ -25,7 +25,7 @@ public class ReportServiceImpl implements ReportService {
 
     @Override
     public void getReports(Model model, Long id) {
-        List<Card> employees = reportDAO.getReports(id);
-        model.addAttribute("reports", employees);
+        List<Card> cards = reportDAO.getReports(id);
+        model.addAttribute("reports", cards);
     }
 }
