@@ -22,7 +22,7 @@
         </div>
     </a>
 
-    <a href="#btn2">
+    <a href="${contextPath}/card#btn2">
         <div id="btn2" class="header-region">
             <p>Salary</p>
         </div >
@@ -63,7 +63,7 @@
                 </tr>
             </c:forEach>
         </table>
-            <input id="add" type="submit" value="add">
+            <input id="update" type="submit" value="update">
         </form>
     </div>
 </div>

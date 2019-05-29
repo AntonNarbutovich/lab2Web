@@ -19,7 +19,7 @@ public class StartController {
     public String hello(Model model){
         userService.getUserImage(model, SecurityContextHolder.getContext().getAuthentication().getName());
         return "hello";
-    }
+}
 
     @GetMapping("/login")
     public String login(){
@@ -31,4 +31,7 @@ public class StartController {
         userService.getEmp(model, SecurityContextHolder.getContext().getAuthentication().getName());
         return "empInfo";
     }
+
+    @GetMapping("/accessDenied")
+    public String error() {return "accessDenied";}
 }

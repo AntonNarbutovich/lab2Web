@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/emp")
 public class EmployeeController {
 
+    private static final String SUCCESS = "success";
     @Autowired
     private EmployeeService employeeService;
 
@@ -20,7 +21,7 @@ public class EmployeeController {
     private UserService userService;
 
     @GetMapping
-    public String getEmployees(Model model){
+    public String getEmployees(Model model) {
         employeeService.getAll(model);
         employeeService.getUsersToAdd(model);
         employeeService.getUsersToDelete(model);
@@ -29,15 +30,15 @@ public class EmployeeController {
     }
 
     @PostMapping(value = "/add")
-    public String addEmployee(Model model, @RequestParam("id") Long id){
+    public String addEmployee(Model model, @RequestParam("id") Long id) {
         employeeService.addEmployee(model, id);
-        return "success";
+        return SUCCESS;
     }
 
     @PostMapping(value = "/delete")
-    public String deleteEmployee(Model model, @RequestParam("id") Long id){
+    public String deleteEmployee(Model model, @RequestParam("id") Long id) {
         employeeService.deleteEmployee(model, id);
-        return "success";
+        return SUCCESS;
     }
 //    @GetMapping(value = "/add")
 //    public String getUsersToAdd(Model model){

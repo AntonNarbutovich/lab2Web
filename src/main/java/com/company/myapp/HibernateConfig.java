@@ -2,6 +2,7 @@ package com.company.myapp;
 
 import java.util.Properties;
 
+import com.company.myapp.model.entity.Card;
 import com.company.myapp.model.entity.Employee;
 import com.company.myapp.model.entity.GlobalEmployee;
 import com.company.myapp.model.entity.User;
@@ -53,7 +54,7 @@ public class HibernateConfig {
         props.put(C3P0_MAX_STATEMENTS, env.getProperty("hibernate.c3p0.max_statements"));
 
         factoryBean.setHibernateProperties(props);
-        factoryBean.setAnnotatedClasses(Employee.class, GlobalEmployee.class, User.class);
+        factoryBean.setAnnotatedClasses(Employee.class, GlobalEmployee.class, User.class, Card.class);
 
         return factoryBean;
     }

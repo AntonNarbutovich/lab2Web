@@ -23,7 +23,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 // указываем правила запросов
                 // по которым будет определятся доступ к ресурсам и остальным данным
                 .authorizeRequests()
-                .anyRequest().authenticated();
+                .antMatchers("/emp").access("hasRole('ROLE_ADMIN')")
+                .anyRequest().authenticated()
+                .and()
+                .exceptionHandling().accessDeniedPage("/accessDenied");
 
         http.
                 formLogin()

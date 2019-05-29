@@ -195,7 +195,7 @@ table.employee-list thead{
     pointer-events: auto;
 }
 .modalWindow > div {
-    width: 400px;
+    width: 900px;
     position: relative;
     margin: 10% auto;
     padding: 5px 20px 13px 20px;
@@ -357,4 +357,16 @@ input#delete:hover{
     height: 60%;
     margin-top: 5%;
     margin-left: 1%;
+}
+
+.denied{
+    position: absolute;
+    top: 82px;
+    left: 40%;
+}
+
+.deniedButton{
+    position: center;
+    color: aliceblue;
+    fill: antiquewhite;
 }
