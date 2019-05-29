@@ -22,7 +22,7 @@
         </div>
     </a>
 
-    <a href="#btn2">
+    <a href="${contextPath}/card#btn2">
         <div id="btn2" class="header-region">
             <p>Salary</p>
         </div >

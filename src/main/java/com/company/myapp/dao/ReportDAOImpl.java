@@ -19,8 +19,7 @@ public class ReportDAOImpl implements ReportDAO {
     @Override
     public List<Employee> getEmployees() {
         Session session = sessionFactory.openSession();
-        Query query = session.createQuery("select employee from Employee employee " +
-                "WHERE employee.role = 'EMPLOYEE'", Employee.class);
+        Query query = session.createQuery("select employee from Employee employee", Employee.class);
         List<Employee> emps = query.list();
         session.close();
         return emps;

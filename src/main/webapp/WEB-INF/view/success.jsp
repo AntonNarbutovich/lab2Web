@@ -14,7 +14,7 @@
     <p>User <b>${name} ${surname}</b> was ${action}</p>
 </div>
 
-<a href="${pageContext.servletContext.contextPath}/emp">
+<a href="${pageContext.servletContext.contextPath}/">
     <div class="return">
         <p>Go back</p>
     </div>
