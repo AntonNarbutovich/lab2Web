@@ -6,6 +6,7 @@ import com.company.myapp.model.entity.Card;
 import com.company.myapp.model.entity.Employee;
 import com.company.myapp.utils.Salary_type;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
@@ -20,6 +21,9 @@ public class CardServiceImpl implements CardService {
 
     @Autowired
     EmployeeDAO employeeDAO;
+
+    @Autowired
+    UserService userService;
 
     @Override
     public void getAll(Model model) {
@@ -45,6 +49,7 @@ public class CardServiceImpl implements CardService {
     public void getEmployeesWithoutCard(Model model) {
         List<Employee> emps = cardDAO.getEmployeesWithoutCard();
         model.addAttribute("no_card_employees", emps);
+        userService.getUserImage(model, SecurityContextHolder.getContext().getAuthentication().getName());
     }
 
     @Override

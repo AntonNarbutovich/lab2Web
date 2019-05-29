@@ -4,6 +4,7 @@ import com.company.myapp.dao.ReportDAO;
 import com.company.myapp.model.entity.Card;
 import com.company.myapp.model.entity.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
@@ -18,10 +19,15 @@ public class ReportServiceImpl implements ReportService {
     @Autowired
     private ReportDAO reportDAO;
 
+    @Autowired
+    UserService userService;
+
     @Override
     public void getEmployees(Model model) {
         List<Employee> employees = reportDAO.getEmployees();
         model.addAttribute("employees", employees);
+        userService.getUserImage(model, SecurityContextHolder.getContext().getAuthentication().getName());
+
     }
 
     @Override
