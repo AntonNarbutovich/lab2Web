@@ -88,7 +88,9 @@
                     <input type="text" name="fixed_salary" placeholder="enter fixed salary" value="" required pattern="^\d*$">
                 <br>SELECT THE USER
             </table>
+            <c:if test="${no_card_employees.size() != 0}">
             <input id="add" type="submit" value="add" >
+            </c:if>
         </form>
     </div>
 </div>
